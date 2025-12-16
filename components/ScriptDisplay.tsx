@@ -17,7 +17,8 @@ export const ScriptDisplay: React.FC<ScriptDisplayProps> = ({ content }) => {
       
       if (isCue) {
         // Style specific cues differently
-        const isSfx = line.toLowerCase().includes('sfx') || line.toLowerCase().includes('música');
+        const lowerLine = line.toLowerCase();
+        const isSfx = lowerLine.includes('sfx') || lowerLine.includes('música') || lowerLine.includes('transición');
         return (
             <p key={i} className={`mt-6 mb-2 font-mono font-bold tracking-wide ${isSfx ? 'text-neon-purple italic' : 'text-acid-green'}`}>
                 {line}
